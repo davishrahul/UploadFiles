@@ -1,0 +1,86 @@
+.container{
+    font-family: 'Josefin Sans', sans-serif;
+}
+#center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+#para{
+    padding: 10px 26px;
+    margin: 0px 16px;
+    outline: none;
+}
+.box{
+    border: 1px solid #bfbaba;
+    box-shadow: 3px 3px #bfbaba;
+    border-radius: 16px;
+}
+#row1{
+    margin-top: 7px;
+}
+.box2{
+    margin-top: 1rem;
+}
+#row2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+#button1{
+    background: #e8e0e0;
+    border-radius: 50%;
+    border-top: 1px solid darkred;
+    color: black;
+}
+#image{
+    width: 100px;
+    height: 100px;
+    margin: 0 17px;
+    float: left;
+}
+.image1{
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+#imageCenter{
+    display: flex;
+    justify-content: center;
+}
+.box2{
+    border: 1px solid #bfbaba;
+    margin: 21px 0px;
+    box-shadow: 0px 2px 3px 3px #bfbaba;
+    border-radius: 13px;
+}
+#spaceReplace{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    padding-top: 3px;
+    padding-left: 40px;
+}
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    display: grid;
+    grid-template-columns: 5% 5% 8% 10%;
+    font-size: 21px;
+    margin: 0px 8px;
+    cursor: pointer;
+}
+#name{
+    font-weight: 700;
+}
+#delete{
+    font-size:20px;
+    float:right;
+    cursor: pointer;
+}

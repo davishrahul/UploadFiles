@@ -1,21 +1,89 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div class="form-group">
+    <input type="file" accept="image/*" #uploadFile id="file" (change)="fileUpload($event)" style="display: none;"
+      class="form-control" />
+  </div>
 
-<router-outlet></router-outlet>
+
+  <div class="box">
+    <div class="row" id="row1">
+      <div id="center" class="col-md-2">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+      </div>
+      <div id="center" class="col-md-4">
+        Sri Rahul
+      </div>
+      <div id="center" class="col-md-2"></div>
+      <div id="center" class="col-md-2">
+        <button id="button1" class="btn btn-secondary" (click)="uploadFile.click()">
+          Add
+        </button>
+      </div>
+      <div id="center" class="col-md-2">
+        <button id="button1" class="btn btn-secondary" [disabled]="postButton" (click)="post()">
+          Post
+        </button>
+      </div>
+    </div>
+    <hr style="margin: 0.5;" />
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngFor="let content of imagesCopy; let i = index">
+          <img [src]="content.url" id="image" />
+          <i style="cursor: pointer;" class="fa fa-minus-circle" aria-hidden="true" (click)="delete(i)"></i>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <p id="para" (click)="clear()" contenteditable="true">
+          Hey! Something Type Here
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <div *ngFor="let content of empty1; let i = index" class="box2" >
+      <div *ngIf="show">
+    <div  class="row" id="row2">
+      <div id="logo" class="col-md-2">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+      </div>
+      <div id="name" class="col-md-4">
+        Sri Rahul
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2">
+        <i id="delete" (click)="deleteRow(i)" class="fa fa-trash-o" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    <hr style="margin: 0.5;" />
+    <div class="row">
+      <div id="spaceReplace" class="col-md-12">
+        {{ spaceReplace }}
+      </div>
+      <div id="imageCenter" class="col-md-12">
+        <div >
+          <img [src]="content.url" class="image1" />
+        </div>
+      </div>
+    </div>
+    <div class="icon">
+      <div (click)="iconChanged()" *ngIf="iconCLicked">
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+      </div>
+      <div (click)="iconUnchanged()" *ngIf="iconUnClicked">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+      </div>
+      <div>
+        <i (click)="comments()" class="fa fa-commenting-o" aria-hidden="true"></i>
+      </div>
+      <div>
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </div>
+      {{likes}}
+    </div>
+  </div>
+</div>
+</div>
